@@ -1,0 +1,16 @@
+services:
+  postgres:
+    container_name: to-do-postgres
+    image: postgres:11.2
+    restart: always
+    ports:
+    - 5432:5432
+    environment:
+    - POSTGRES_USER=username
+    - POSTGRES_DB=to_do
+    - POSTGRES_PASSWORD=password
+  valkey:
+    container_name: 'to-do-valkey'
+    image: 'valkey/valkey:7.2.5'
+    ports:
+      - '6379:6379'
